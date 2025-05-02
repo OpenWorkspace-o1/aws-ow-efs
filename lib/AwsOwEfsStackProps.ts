@@ -1,6 +1,6 @@
 import { StackProps } from "aws-cdk-lib";
 
-export interface AwsOwEfsStackProps extends StackProps {
+export interface AwsOwEfsBaseStackProps {
      /** Resource prefix for all AWS resources */
      readonly resourcePrefix: string;
      /** AWS region where resources will be deployed */
@@ -13,6 +13,8 @@ export interface AwsOwEfsStackProps extends StackProps {
       * Owner or team responsible for the resources
       */
      readonly owner: string;
+}
+export interface AwsOwEfsStackProps extends StackProps, AwsOwEfsBaseStackProps {
      /** VPC ID */
      readonly vpcId: string;
      /** VPC subnet type */
@@ -23,4 +25,6 @@ export interface AwsOwEfsStackProps extends StackProps {
      readonly vpcPrivateSubnetAzs: string[];
      /** VPC private subnet route table IDs */
      readonly vpcPrivateSubnetRouteTableIds: string[];
+     /** EFS names */
+     readonly efsNames: string[];
 }

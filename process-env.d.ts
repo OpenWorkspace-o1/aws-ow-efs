@@ -9,5 +9,6 @@ declare module NodeJS {
         VPC_PRIVATE_SUBNET_IDS: string;
         VPC_PRIVATE_SUBNET_AZS: string;
         VPC_PRIVATE_SUBNET_ROUTE_TABLE_IDS: string;
+        EFS_NAMES: string;
     }
 }

@@ -25,6 +25,7 @@ checkEnvVariables('APP_NAME',
     'VPC_PRIVATE_SUBNET_ROUTE_TABLE_IDS',
     'OWNER',
     'VPC_ID',
+    'EFS_NAMES',
 );
 
 const { CDK_DEFAULT_ACCOUNT: account } = process.env;
@@ -59,6 +60,7 @@ const awsOwEfsStackProps: AwsOwEfsStackProps = {
     vpcPrivateSubnetIds: process.env.VPC_PRIVATE_SUBNET_IDS!.split(','),
     vpcPrivateSubnetAzs: process.env.VPC_PRIVATE_SUBNET_AZS!.split(','),
     vpcPrivateSubnetRouteTableIds: process.env.VPC_PRIVATE_SUBNET_ROUTE_TABLE_IDS!.split(','),
+    efsNames: process.env.EFS_NAMES!.split(','),
 };
 new AwsOwEfsStack(app, `${owner}-${deployEnvironment}-AwsOwEfsStack`, {
     ...awsOwEfsStackProps,
